@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:2.136
 USER root
 
 #Pre-Install Jenkins Plugins
@@ -24,7 +24,3 @@ apt-get update && apt-get install -y kubectl
 RUN addgroup --gid 1001 dsock
 RUN gpasswd -a jenkins dsock 
 USER jenkins
-
-#66d0ccd2352a48748f7143d145ecd6c0
-
-#Ao1465441881
