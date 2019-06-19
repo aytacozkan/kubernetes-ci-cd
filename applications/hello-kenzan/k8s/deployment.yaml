@@ -1,33 +1,33 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kenzan2
+  name: hello-kenzan3
   labels:
-    app: hello-kenzan2
+    app: hello-kenzan3
 spec:
   ports:
     - port: 80
       targetPort: 80
   selector:
-    app: hello-kenzan2
-    tier: hello-kenzan2
+    app: hello-kenzan3
+    tier: hello-kenzan3
   type: NodePort
 
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: hello-kenzan2
+  name: hello-kenzan3
   labels:
-    app: hello-kenzan2
+    app: hello-kenzan3
 spec:
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: hello-kenzan2
-        tier: hello-kenzan2
+        app: hello-kenzan3
+        tier: hello-kenzan3
     spec:
       containers:
       - image: 127.0.0.1:30400/hello-kenzan:$BUILD_TAG
